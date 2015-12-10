@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ficha</title>
+    <script src="cordova.js"></script>
+    <script src="js/mapaficha.js"></script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+<div></div><p id="addr"></p></div>
+<div id="map"></div>
+<input type="button" value="Atrás" id="gback">
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_xXIJGIrRiORSK5aacUSVPPFT5yEdMFQ&callback=initMap">
+</script>
+</body>
+</html>

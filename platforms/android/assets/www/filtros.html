@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+    <script src="cordova.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;"></script>
+    <script src="js/filtros.js"></script>
+
+    <title>Inicio</title>
+</head>
+<body>
+<div id="page">
+
+<div id="usern"><p id="p1"></p></div>
+    <div id="location">
+
+    </div>
+
+    <div align="left">
+        <input type="button" value="Obtener ubicación actual" id="bub">
+        <input type="button" value="Ver mapa" id="bmapa">
+    </div>
+
+    <p>Distancia máxima:<br>
+    <input type="number" min="0"  id="distancia" />
+    <br></p>
+    <p>Precio máximo:<br>
+    <input type="number" min="0"  id="precio" />
+    <br></p>
+    <p>Ordenar por:<br>
+    <input type = "radio"
+           name = "radOrd"
+           id = "odist"
+           value = "Distancia"
+           checked = "checked" />
+    <label for = "odist">Distancia</label>
+
+    <input type = "radio"
+           name = "radOrd"
+           id = "opre"
+           value = "Precio" />
+    <label for = "opre">Precio</label></p>
+
+    <input type="button" value="Buscar herramientas" id="bherr" disabled="true"><BR>
+
+    <input type="button" value="logout" id="logoutb">
+
+
+</div>
+</div>
+
+</body>
+</html>
