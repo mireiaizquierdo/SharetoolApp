@@ -19,7 +19,6 @@ function login(){
            window.location = "filtros.html";
         },
         error:function(user, error) {
-            console.log("ERROR!", error.code);
             if (error.code == 209){
                 Parse.User.logOut();
                 Parse.User.logIn(usern, passw, {
@@ -28,7 +27,6 @@ function login(){
                         window.location = "filtros.html";
                     },
                     error:function(user, error) {
-                        console.log("ERROR!", error.code);
                         navigator.notification.alert('El usuario o la contrase\u00f1a son incorrectos, intente de nuevo.', function (){}, 'Error de inicio de sesi\u00f3n','Aceptar');
                         document.getElementById("blogin").disabled=false;
                     }

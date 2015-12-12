@@ -2,7 +2,6 @@ var map;
 var ob;
 function initMap() {
     ob=getVarsUrl();
-    console.log("ob", ob);
     var myLatLng = {lat: parseFloat(ob.lat), lng: parseFloat(ob.long)};
     map = new google.maps.Map(document.getElementById('map'), {
         center: myLatLng,

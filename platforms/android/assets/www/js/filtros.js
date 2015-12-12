@@ -14,8 +14,6 @@ function GetCurrentUser() {
     document.getElementById('bherr').addEventListener('click',Getlista, false);
     document.getElementById('bmapa').disabled = true;
     var params = getVarsUrl();
-    console.log("parametros",Object.keys(params).length);
-    console.log("params",params);
     document.getElementById('bmapa').addEventListener('click',verMapa, false);
     if (Object.keys(params).length > 1){
         document.getElementById("precio").value=params.pm
@@ -52,7 +50,6 @@ function verMapa(){
         }
     }
     var url = "mapaquiestoy.html?lat=" + latitude + '&long=' + longitude +'&add='+ add + '&dm=' + document.getElementById("distancia").value + '&pm=' + document.getElementById("precio").value + '&ord=' + rad;
-    console.log("add", url);
     window.location = url;
 }
 
@@ -88,8 +85,6 @@ function Getlista(){
             break;
         }
     }
-    console.log("lat", latitude);
-    console.log("long", longitude);
 
     var url = 'herramientas.html?lat=' + latitude + '&long=' + longitude + '&dm=' + dm + '&pm=' + pm + '&ord=' + rad;
     window.location=url;

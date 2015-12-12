@@ -46,26 +46,22 @@ function getHerramientas(){
     //query.equalTo("playerName", "Dan Stemkoski");
     if (params.ord == "Distancia"){
         if (params.dm == "") {
-            console.log("dis", "vacio");
             km = 1000;
         }else {
             km = parseInt(params.dm);
         }
         if (params.pm != "") {
-            console.log("precio", params.pm);
             query.lessThanOrEqualTo("preciodia", parseInt(params.pm));
         }
         query.withinKilometers("Localizacion", gp, km );
 
     }else if (params.ord == "Precio"){
         if (params.dm == "") {
-            console.log("dis", "vacio");
             km = 1000;
         }else {
             km = parseInt(params.dm);
         }
         if (params.pm != "") {
-            console.log("precio", params.pm);
             query.lessThanOrEqualTo("preciodia", parseInt(params.pm));
         }
         query.withinKilometers("Localizacion", gp, km );
@@ -77,14 +73,10 @@ function getHerramientas(){
                 alert("No hay herramientas que coincidan con su b\u00fasqueda");
                 window.location="filtros.html?lat=" + params.lat + '&long=' + params.long + '&dm=' + params.dm + '&pm=' + params.pm + '&ord=' + params.ord;
             }else{
-                console.log("Hay herramientas");
-                console.log ("res", results.length);
-                console.log("ress",results);
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length; i++) {
                     var object = results[i];
                     var furl = "ficha.html?oid=" + object.id + '&lat=' + params.lat + '&long=' + params.long + '&dm=' + params.dm + '&pm=' + params.pm  + '&ord=' + params.ord;
-                    console.log("url", furl);
                     $('#MyFriendsList').append('<li><a href="' + furl + '" data-ajax="false"><img src=' + object.get("perfimg") + 'width="100" height="100"/><h3 class="ui-li-heading">' + object.get("Nombre") + '</h3><div class="ui-li-desc">' + object.get("Descripcion") + '</div><h2><div class="ui-li-content">'+ distanciade(object.get("Localizacion")) + ' Km - ' + object.get("preciodia") + ' ' + String.fromCharCode(8364) + '</div></h2></a></li>');
 
                     //alert(object.id + ' - ' + object.get('Nombre'));

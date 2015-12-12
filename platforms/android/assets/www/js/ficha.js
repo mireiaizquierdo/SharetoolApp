@@ -16,7 +16,6 @@ function buildficha(){
             document.getElementById("desc").innerHTML = results[0].get("Descripcion");
             document.getElementById("prec").innerHTML = results[0].get("preciodia");
             point = results[0].get("Localizacion");
-            console.log(point);
             ReverseGeocode(point.latitude,point.longitude);
             getfecha(results[0].get("Disponibilidad_inicio"), results[0].get("Disponibilidad_final"));
             document.getElementById("vmapa").addEventListener('click',vermapa,false);
@@ -68,8 +67,6 @@ function ReverseGeocode(latitude, longitude){
 
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
-                //document.getElementById("location").innerHTML = results[0].formatted_address;
-                console.log("dir", "llegue");
                  var dir = "";
 
                 for (var i=0; i<results[0].address_components.length; i++) {
