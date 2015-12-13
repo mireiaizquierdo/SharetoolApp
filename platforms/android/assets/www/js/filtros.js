@@ -9,6 +9,7 @@ window.onload = function () {
 
 function GetCurrentUser() {
     Parse.initialize("tN9uG7NreDb9yL8sCP05DpEyElNdSGqfpE4zYBxD", "7Kb0ruzEAyvKrGHGPYpEEbhPw2E8LpF7tjpunq8k");
+    document.getElementById('p1').innerHTML = "Bienvenido/a, " + Parse.User.current().getUsername();
     document.getElementById('logoutb').addEventListener('click', logout, false);
     document.getElementById('bub').addEventListener('click',GetGeolocation, false);
     document.getElementById('bherr').addEventListener('click',Getlista, false);
@@ -108,7 +109,7 @@ function GetPosition(position)
 
 function PositionError() {
     navigator.notification.alert('Could not find the current location.');
-    document.getElementById("bub").disabled= true;
+    document.getElementById("bub").disabled= false;
     document.getElementById('bmapa').disabled = true;
 }
 

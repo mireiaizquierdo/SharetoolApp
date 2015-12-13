@@ -36,7 +36,8 @@ function vermapa(){
 
 function goback(){
     document.getElementById("bback").disabled=true;
-    window.history.back();
+    var params = getVarsUrl();
+    window.location="herramientas.html?lat=" + params.lat + '&long=' + params.long + '&dm=' + params.dm + '&pm=' + params.pm + '&ord=' + params.ord;
 }
 
 function gohome(){
